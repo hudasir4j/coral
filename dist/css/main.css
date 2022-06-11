@@ -163,8 +163,38 @@ nav .icon-burger .line {
     -webkit-transition: 0.4s;
     transition: 0.4s;
   }
-  nav :checked ~ .links {
-    display: block;
+  .dark nav :checked ~ .links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 5px;
+    background: #131111;
+    position: fixed;
+    right: 1em;
+    border-radius: 20px;
+    top: .5em;
+  }
+  .light nav :checked ~ .links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 5px;
+    background: #c4a6a6;
+    position: fixed;
+    right: 1em;
+    border-radius: 20px;
+    top: .5em;
+  }
+  nav :checked ~ .links li {
+    margin: 2em;
   }
   nav :checked ~ .icon-burger .line:nth-child(1) {
     -webkit-transform: translateY(10px) rotate(225deg);
@@ -236,6 +266,171 @@ svg {
   }
 }
 
+.volunteer-container {
+  height: 100%;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 1em;
+  padding-bottom: .25em;
+}
+
+.input {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: white;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px -5px 4px rgba(255, 255, 255, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px -5px 4px rgba(255, 255, 255, 0.25);
+  color: #8f7a7a;
+  padding: 16px;
+  margin: 2vh;
+  font-size: 16px;
+  border-radius: 10vh;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  width: auto;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #ded1d1;
+}
+
+/* The search field */
+#myInput {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-image: url("../home/img/magnifying-glass-solid.svg");
+  background-size: 16px;
+  background-position: 14px 12px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 14px 20px 12px 45px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+#myInput:focus {
+  outline: 3px solid rgba(221, 221, 221, 0);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f6f6f6;
+  min-width: 230px;
+  border: 1px solid #ddd;
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: #B9AFAF;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+  display: block;
+}
+
+#textbox {
+  border-radius: 10vh;
+  padding: 2vh;
+  width: 80%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 2vh;
+  margin-top: 1em;
+  border: none;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px -5px 4px rgba(255, 255, 255, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px -5px 4px rgba(255, 255, 255, 0.25);
+}
+
+#textBox:focus {
+  outline: 3px solid rgba(221, 221, 221, 0);
+}
+
+.opportunity {
+  width: 80%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  padding: 2vh;
+  height: auto;
+  border-radius: 2vh;
+  background-color: #ded1d1;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px -5px 4px rgba(255, 255, 255, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px -5px 4px rgba(255, 255, 255, 0.25);
+  margin: 1em;
+}
+
+.opportunity h5 {
+  margin-top: 1em;
+}
+
+.light .volunteer-container {
+  background-color: #CFB9B9;
+  -webkit-box-shadow: 6px 4px 11px rgba(0, 0, 0, 0.25), -11px -13px 13px 1px rgba(255, 241, 241, 0.16);
+          box-shadow: 6px 4px 11px rgba(0, 0, 0, 0.25), -11px -13px 13px 1px rgba(255, 241, 241, 0.16);
+}
+
+.light .opportunity {
+  background: #CFB9B9;
+  -webkit-box-shadow: 6px 4px 11px rgba(0, 0, 0, 0.25), -11px -13px 15px rgba(255, 241, 241, 0.29);
+          box-shadow: 6px 4px 11px rgba(0, 0, 0, 0.25), -11px -13px 15px rgba(255, 241, 241, 0.29);
+}
+
+.light .opportunity h2 {
+  color: #a37e7e;
+}
+
+.light .opportunity h5 {
+  color: #a37e7e;
+}
+
+.light #volunteer-title {
+  color: red;
+}
+
+.dark .volunteer-container {
+  background-color: #ded1d1;
+  -webkit-box-shadow: 6px 4px 11px rgba(0, 0, 0, 0.25), -11px -13px 13px 1px rgba(255, 241, 241, 0.16);
+          box-shadow: 6px 4px 11px rgba(0, 0, 0, 0.25), -11px -13px 13px 1px rgba(255, 241, 241, 0.16);
+}
+
+.dark .opportunity h2 {
+  color: #795858;
+}
+
+.dark .opportunity h5 {
+  color: #795858;
+}
+
 body {
   -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
@@ -245,8 +440,14 @@ body {
   background: #272121;
 }
 
-.dark h1 {
+.dark main h1 {
   color: white;
+}
+
+.dark #volunteer-title {
+  color: white;
+  text-align: center;
+  font-size: 800%;
 }
 
 .light {
@@ -268,6 +469,6 @@ body {
 }
 
 .light main h3 {
-  color: #B9AFAF;
+  color: #695f5f;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,4 +1,4 @@
-@import 'variables','config','nav','home';
+@import 'variables','config','nav','home','volunteer';
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@200&display=swap');
 
@@ -8,8 +8,13 @@ body{
 .dark{
     background: $primary-dark;
 
-    h1{
+    main h1{
         color: white;
+    }
+    #volunteer-title{
+        color: white;
+        text-align: center;
+        font-size: 800%;
     }
 }
 
@@ -25,6 +30,6 @@ body{
         color: $primary-dark;
     }
     main h3{
-        color: $secondary-light;
+        color:#695f5f;
     }
 }

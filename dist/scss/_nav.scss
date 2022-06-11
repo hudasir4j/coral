@@ -133,8 +133,33 @@ nav .icon-burger .line {
 
 
 
-    nav :checked ~ .links {
-        display: block
+    .dark nav :checked ~ .links {
+        
+        display: flex;
+        flex-direction: column;
+        padding:5px;
+        background: #131111;
+        position:fixed;
+        right: 1em;
+        border-radius: 20px;
+        top: .5em;
+    }
+    
+    .light nav :checked ~ .links {
+        
+        display: flex;
+        flex-direction: column;
+        padding:5px;
+        background: #c4a6a6;
+        position:fixed;
+        right: 1em;
+        border-radius: 20px;
+        top: .5em;
+        
+    }
+
+    nav :checked ~ .links li{
+        margin: 2em;
     }
     nav :checked ~ .icon-burger .line:nth-child(1) {
         transform: translateY(10px) rotate(225deg);
