@@ -1,0 +1,48 @@
+@import 'variables';
+body{
+    overflow-x:hidden;
+}
+h1{
+    font-size: 25vh;
+}
+.col h3{
+    font-size: 8vh;
+    font-weight: 400;
+    color: $secondary-light;
+    font-family: 'Overpass',sans-serif;
+}
+.row{
+    display:flex;
+    height: 88%;
+    align-items:right;
+}
+.col{
+    align-items: right;
+    right: 0;
+    margin-left:40%;
+    margin-top: 10%;
+    flex-basis: 50%;
+    text-align:right;
+}
+
+svg{
+    height: 100%;
+    position: fixed;
+    bottom: -13vh;
+}
+
+@media screen and (max-width: 768px) {
+    main h1{
+        font-size: 6vh;
+    }
+    .col h3{
+        font-size: 4vh;
+    }
+    svg{
+        height: 40vh;
+        bottom:0vh;
+        left: -20vh;
+    }
+
+
+}

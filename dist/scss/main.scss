@@ -1,0 +1,30 @@
+@import 'variables','config','nav','home';
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@200&display=swap');
+
+body{
+    transition: all 0.2s linear;
+}
+.dark{
+    background: $primary-dark;
+
+    h1{
+        color: white;
+    }
+}
+
+.light{
+    background: $primary-light;
+    .label{
+        box-shadow: -2px -3px 12px 6px rgba(255, 255, 255, 0.7), 4px 4px 9px 11px #CFB9B9;
+    }
+    .box{
+        box-shadow: -2px -3px 12px 6px rgba(255, 255, 255, 0.7), 4px 4px 9px 11px #CFB9B9;
+    }
+    main h1{
+        color: $primary-dark;
+    }
+    main h3{
+        color: $secondary-light;
+    }
+}
