@@ -107,7 +107,7 @@ function getSearchResults() {
               url = `https://${url}`;
             }
             urlInnerHTML = `
-              <div class="flex-end"><a class="website-btn right href="${url}" target="_blank" rel="noopener noreferrer">
+              <div class="flex-end"><a class="website-btn right" href="${url}" target="_blank" rel="noopener noreferrer">
               website
               </a></div>
               `;

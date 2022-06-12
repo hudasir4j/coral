@@ -340,7 +340,7 @@ div .input {
 #city-input {
   background-image: url("../img/location-dot.svg");
   background-size: 14px;
-  background-position: 14px 16px;
+  background-position: 14px 14px;
   background-repeat: no-repeat;
   font-size: 16px;
   padding: 2vh;
@@ -388,7 +388,7 @@ div .input {
 #keyword-input {
   background-image: url("../img/magnifying-glass-solid.svg");
   background-size: 14px;
-  background-position: 14px 20px;
+  background-position: 14px 16px;
   background-repeat: no-repeat;
   text-indent: 18px;
   font-size: 16px;
