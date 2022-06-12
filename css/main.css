@@ -13,15 +13,18 @@
   padding: 2vh;
   min-width: 2vh;
   align-items: center;
-  margin-left: 2vh;
-  margin-top: 1em;
+  margin: 2vh;
   border: none;
   transition: all 0.3s linear;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
     0px -5px 4px rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  background-color: #db8080;
+  color: white;
 }
 #searchbtn:hover {
-  background-color: #ded1d1;
+  background-color: white;
+  color: #db8080;
 }
 
 /* #output {
@@ -48,8 +51,13 @@ header h3 {
   margin-left: 2em;
 }
 
-header li,
 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header li,
+.link {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 700;
   text-decoration: none;
@@ -79,6 +87,7 @@ a {
 
 .nav_links {
   list-style: none;
+  z-index: 1;
 }
 
 .nav_links li {
@@ -323,46 +332,38 @@ div .input {
   text-align: center;
 }
 
-/* Dropdown Button */
-.dropbtn {
-  background-color: white;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
-    0px -5px 4px rgba(255, 255, 255, 0.25);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
-    0px -5px 4px rgba(255, 255, 255, 0.25);
-  padding: 16px;
-  margin: 2vh;
-  font-size: 16px;
-  border-radius: 10vh;
-  border: none;
-  cursor: pointer;
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
-  width: auto;
-}
-
-/* Dropdown button on hover & focus */
-.dropbtn:hover,
-.dropbtn:focus {
+.city-dropdown:hover {
   background-color: #ded1d1;
 }
 
 /* The city dropdown input field */
 #city-input {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
   background-image: url("../img/location-dot.svg");
-  background-size: 16px;
-  background-position: 14px 12px;
+  background-size: 14px;
+  background-position: 14px 16px;
   background-repeat: no-repeat;
   font-size: 16px;
-  padding: 14px 20px 12px 45px;
+  padding: 2vh;
   border: none;
-  border-bottom: 1px solid #dddddd;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+    0px -5px 4px rgba(255, 255, 255, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+    0px -5px 4px rgba(255, 255, 255, 0.25);
+  margin: 2vh;
+  border-radius: 10vh;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  width: auto;
+  text-indent: 18px;
 }
 
 #city-input:focus {
   outline: none;
+  background-color: #ded1d1;
+}
+
+.city-input:hover {
+  background-color: #ded1d1;
 }
 
 .dropdown {
@@ -372,7 +373,7 @@ div .input {
 
 .dropdown-content {
   display: none;
-  position: absolute;
+  /*   position: absolute; */
   background-color: #f6f6f6;
   min-width: 230px;
   border: 1px solid #dddddd;
@@ -385,6 +386,11 @@ div .input {
 }
 
 #keyword-input {
+  background-image: url("../img/magnifying-glass-solid.svg");
+  background-size: 14px;
+  background-position: 14px 20px;
+  background-repeat: no-repeat;
+  text-indent: 18px;
   font-size: 16px;
   border-radius: 10vh;
   padding: 2vh;
@@ -412,13 +418,10 @@ div .input {
   background-color: #ded1d1;
 }
 
-.center-horiz {
-  display: flex;
-  justify-content: center;
-}
-
 .opportunity {
-  align-items: center;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 10px;
   margin: auto;
   padding: 2vh;
   height: auto;
@@ -431,8 +434,14 @@ div .input {
   margin: 1em;
 }
 
-.opportunity h5 {
-  margin-top: 1em;
+.right {
+  float: right;
+  text-align: right;
+}
+
+.left {
+  float: left;
+  text-align: left;
 }
 
 .light .volunteer-container {
@@ -451,12 +460,22 @@ div .input {
     -11px -13px 15px rgba(255, 241, 241, 0.29);
 }
 
-.light .opportunity h2 {
+.light main h1 {
+  color: #272121;
+}
+
+.light main h3 {
+  color: #695f5f;
+}
+
+.light .opportunity h2,
+.light .opportunity h3 {
   color: #a37e7e;
 }
 
-.light .opportunity h5 {
-  color: #a37e7e;
+.light .opportunity h5,
+.light .opportunity p {
+  color: #272121;
 }
 
 .light #volunteer-title {
@@ -475,12 +494,14 @@ div .input {
     -11px -13px 13px 1px rgba(255, 241, 241, 0.16);
 }
 
-.dark .opportunity h2 {
+.dark .opportunity h2,
+.dark .opportunity h3 {
   color: #795858;
 }
 
-.dark .opportunity h5 {
-  color: #795858;
+.dark .opportunity h5,
+.dark .opportunity p {
+  color: #272121;
 }
 
 .dark {
@@ -515,11 +536,32 @@ div .input {
     4px 4px 9px 11px #cfb9b9;
 }
 
-.light main h1 {
-  color: #272121;
+/* Remove down arrow on cities dropdown */
+input::-webkit-calendar-picker-indicator {
+  display: none !important;
 }
 
-.light main h3 {
-  color: #695f5f;
+.website-btn {
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 10vh;
+  padding: 2vh;
+  border: none;
+  transition: all 0.3s linear;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+    0px -5px 4px rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  background-color: white;
+  color: #db8080;
 }
+
+.website-btn:hover {
+  background-color: #db8080;
+  color: white;
+}
+      .flex-end {
+        display: flex;
+        justify-content: flex-end;
+      }
 /*# sourceMappingURL=main.css.map */

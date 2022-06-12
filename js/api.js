@@ -19,7 +19,7 @@ function populateCitiesDropdown() {
           cityArr.push(city);
         }
       }
-    
+
       // Sort array
       cityArr.sort();
 
@@ -80,39 +80,47 @@ function getSearchResults() {
       // Set up HTML
       let innerHTML = ``;
       if (resArr.length <= 0) {
-        innerHTML = `<div class="opportunity center-horiz">
+        innerHTML = `<div class="opportunity">
                <h2>no results found!</h2>
              </div>`;
       } else {
-        let name,
-          description,
-          address1,
-          address2,
-          city,
-          zip,
-          hours,
-          phones,
-          url,
-          link;
+        let name, description, city, zip, url;
+        // link,
+        // address1,
+        // address2,
+        // hours,
+        // phones;
         for (let i = 0; i < resArr.length; i++) {
           let currResAttrs = resArr[i].attributes;
           name = currResAttrs.Name;
           description = currResAttrs.description;
-          address1 = currResAttrs.addrln1;
-          address2 = currResAttrs.addrln2;
           city = currResAttrs.city;
           zip = currResAttrs.zip;
-          hours = currResAttrs.hours;
-          phones = currResAttrs.phones;
           url = currResAttrs.url;
-          link = currResAttrs.link;
-
-          innerHTML += `<div class="opportunity">
-               <h2>${name}</h2>
-               <h5>
+          // address1 = currResAttrs.addrln1;
+          // address2 = currResAttrs.addrln2;
+          // hours = currResAttrs.hours;
+          // phones = currResAttrs.phones;
+          let urlInnerHTML = ``;
+          if (url) {
+            if (url.indexOf("http") === -1) {
+              url = `https://${url}`;
+            }
+            urlInnerHTML = `
+              <div class="flex-end"><a class="website-btn right href="${url}" target="_blank" rel="noopener noreferrer">
+              website
+              </a></div>
+              `;
+          }
+          innerHTML += `
+            <div class="opportunity">
+               <h2 class="left">${name}</h2>
+               <h3 class="right">${city}, ${zip}</h3>
+               <p class="left">
                  ${description}
-               </h5>
-             </div>`.toLowerCase();
+               </p>
+               ${urlInnerHTML}
+            </div>`.toLowerCase();
         }
       }
       document.getElementById("opportunities").innerHTML = innerHTML;
