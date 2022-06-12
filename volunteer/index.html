@@ -1,104 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="icon" href="./home/img/icon.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="icon" href="./img/icon.png" />
     <title>Volunteer! | Coral</title>
-</head>
-<body class="dark">
+  </head>
+  <body class="dark">
     <header>
-
-        <h3>coral</h3>
-        <nav class="nav_links">
-            <input id="nav-toggle" type="checkbox">
-            <ul class="links">
-                <li><a href="../home/index.html">home</a></li>
-                <li class="active"><span class="box"><a href="index.html">volunteer</a></span></li>
-                <li>
-                    <input type="checkbox" class="checkbox" id="checkbox">
-                    <label for="checkbox" class="label">
-                    <i class="fas fa-moon fa-xl"></i>
-                    <i class="fas fa-sun fa-xl"></i>
-                    <div class="ball"></div>
-                    </label>
-                </li>
-            </ul>
-            <label for="nav-toggle" class="icon-burger">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
+      <h3>coral</h3>
+      <nav class="nav_links">
+        <input id="nav-toggle" type="checkbox" />
+        <ul class="links">
+          <li><a href="/">home</a></li>
+          <li class="active">
+            <span class="box"><a href="/volunteer">volunteer</a></span>
+          </li>
+          <li>
+            <input type="checkbox" class="checkbox" id="checkbox" />
+            <label for="checkbox" class="label">
+              <i class="fas fa-moon fa-xl"></i>
+              <i class="fas fa-sun fa-xl"></i>
+              <div class="ball"></div>
             </label>
-        </nav>
+          </li>
+        </ul>
+        <label for="nav-toggle" class="icon-burger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </label>
+      </nav>
     </header>
     <!--Avalon, Malibu, Compton, West Hollywood, Glendale-->
 
     <h1 id="volunteer-title">volunteer</h1>
     <div class="volunteer-container">
+      <form action="javascript:getSearchResults()">
         <div class="input">
-            <input type="text" placeholder="search for anything!" id="textbox">
-            <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn" id="dropbtn">choose a location... <i class="fa-solid fa-caret-down"></i></button>
-                <div id="myDropdown" class="dropdown-content">
-                    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-                    <a onClick="document.getElementById('dropbtn').innerText = 'Avalon'; " >Avalon</a>
-                    <a onClick="document.getElementById('dropbtn').innerText = 'Malibu'; " >Malibu</a>
-                    <a onClick="document.getElementById('dropbtn').innerText = 'Compton'; " >Compton</a>
-                    <a onClick="document.getElementById('dropbtn').innerText = 'West Hollywood'; " >West Hollywood</a>
-                    <a onClick="document.getElementById('dropbtn').innerText = 'Glendale'; " >Glendale</a>
-                    <a onClick="document.getElementById('dropbtn').innerText = 'Antelope Valley'; " >Antelope Valley</a>
-                </div>
-            </div>
+          <input
+            id="keyword-input"
+            type="text"
+            placeholder="search for anything!"
+          />
+          <input id="searchbtn" type="submit" value="search" />
+          <div class="dropdown">
+            <input id="city-input" class="dropbtn" type="text" list="cities" placeholder="choose a location..."/>
+              <datalist id="cities" class="dropdown-content">
+              </datalist>
+          </div>
         </div>
+      </form>
 
-        <!-- entries -->
+      <h4 id="output" />
+      <!-- entries -->
 
-        <div class="opportunity">
-            <h2>name of volunteering opportunity</h2>
-            <h5>description, Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure cumque reiciendis corporis dolorum ducimus nisi! Enim debitis sunt adipisci tenetur cumque tempore nemo molestias modi praesentium quibusdam excepturi hic suscipit accusamus ad laudantium dolorem itaque mollitia ab perspiciatis quidem quam temporibus, odio cum possimus. Illo ea nobis ipsa magni nisi.</h5>
-        </div>
-
-        <div class="opportunity">
-            <h2>name of volunteering opportunity</h2>
-            <h5>description, Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure cumque reiciendis corporis dolorum ducimus nisi! Enim debitis sunt adipisci tenetur cumque tempore nemo molestias modi praesentium quibusdam excepturi hic suscipit accusamus ad laudantium dolorem itaque mollitia ab perspiciatis quidem quam temporibus, odio cum possimus. Illo ea nobis ipsa magni nisi.</h5>
-        </div>
-
-        <div class="opportunity">
-            <h2>name of volunteering opportunity</h2>
-            <h5>description, Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure cumque reiciendis corporis dolorum ducimus nisi! Enim debitis sunt adipisci tenetur cumque tempore nemo molestias modi praesentium quibusdam excepturi hic suscipit accusamus ad laudantium dolorem itaque mollitia ab perspiciatis quidem quam temporibus, odio cum possimus. Illo ea nobis ipsa magni nisi.</h5>
-        </div>
-
-        <div class="opportunity">
-            <h2>name of volunteering opportunity</h2>
-            <h5>description, Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure cumque reiciendis corporis dolorum ducimus nisi! Enim debitis sunt adipisci tenetur cumque tempore nemo molestias modi praesentium quibusdam excepturi hic suscipit accusamus ad laudantium dolorem itaque mollitia ab perspiciatis quidem quam temporibus, odio cum possimus. Illo ea nobis ipsa magni nisi.</h5>
-        </div>
-
-        <div class="opportunity">
-            <h2>name of volunteering opportunity</h2>
-            <h5>description, Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure cumque reiciendis corporis dolorum ducimus nisi! Enim debitis sunt adipisci tenetur cumque tempore nemo molestias modi praesentium quibusdam excepturi hic suscipit accusamus ad laudantium dolorem itaque mollitia ab perspiciatis quidem quam temporibus, odio cum possimus. Illo ea nobis ipsa magni nisi.</h5>
-        </div>
-
-        <div class="opportunity">
-            <h2>name of volunteering opportunity</h2>
-            <h5>description, Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure cumque reiciendis corporis dolorum ducimus nisi! Enim debitis sunt adipisci tenetur cumque tempore nemo molestias modi praesentium quibusdam excepturi hic suscipit accusamus ad laudantium dolorem itaque mollitia ab perspiciatis quidem quam temporibus, odio cum possimus. Illo ea nobis ipsa magni nisi.</h5>
-        </div>
-
-        <div class="opportunity">
-            <h2>name of volunteering opportunity</h2>
-            <h5>description, Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure cumque reiciendis corporis dolorum ducimus nisi! Enim debitis sunt adipisci tenetur cumque tempore nemo molestias modi praesentium quibusdam excepturi hic suscipit accusamus ad laudantium dolorem itaque mollitia ab perspiciatis quidem quam temporibus, odio cum possimus. Illo ea nobis ipsa magni nisi.</h5>
-        </div>
-
-        <div class="opportunity">
-            <h2>name of volunteering opportunity</h2>
-            <h5>description, Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure cumque reiciendis corporis dolorum ducimus nisi! Enim debitis sunt adipisci tenetur cumque tempore nemo molestias modi praesentium quibusdam excepturi hic suscipit accusamus ad laudantium dolorem itaque mollitia ab perspiciatis quidem quam temporibus, odio cum possimus. Illo ea nobis ipsa magni nisi.</h5>
-        </div>
-
-
+      <div id="opportunities"></div>
     </div>
 
     <script src="./js/app.js"></script>
-    <script src="https://kit.fontawesome.com/6f3876ad7f.js" crossorigin="anonymous"></script>
-</body>
+    <script src="./js/api.js"></script>
+    <script>populateCitiesDropdown();</script>
+    <script
+      src="https://kit.fontawesome.com/6f3876ad7f.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

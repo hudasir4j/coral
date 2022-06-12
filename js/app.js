@@ -15,12 +15,12 @@ function myFunction() {
   
   function filterFunction() {
     var input, filter, ul, li, a, i;
-    input = document.getElementById("myInput");
+    input = document.getElementById("city-input");
     filter = input.value.toUpperCase();
-    div = document.getElementById("myDropdown");
+    var div = document.getElementById("myDropdown");
     a = div.getElementsByTagName("a");
     for (i = 0; i < a.length; i++) {
-      txtValue = a[i].textContent || a[i].innerText;
+      let txtValue = a[i].textContent || a[i].innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
         a[i].style.display = "";
       } else {
