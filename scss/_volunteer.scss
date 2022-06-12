@@ -1,6 +1,5 @@
 @import './variables';
 
-
 ///EXPERIMENTAL!!!!
 
 
@@ -43,9 +42,9 @@
   }
   
   /* The search field */
-  #myInput {
+  #city-input {
     box-sizing: border-box;
-    background-image: url('../home/img/magnifying-glass-solid.svg');
+    background-image: url('../img/location-dot.svg');
     background-size: 16px;
     background-position: 14px 12px;
     background-repeat: no-repeat;
@@ -55,7 +54,7 @@
     border-bottom: 1px solid #ddd;
   }
   
-  #myInput:focus {outline: 3px solid rgba(221, 221, 221, 0);}
+  #city-input:focus {outline: 3px solid rgba(221, 221, 221, 0);}
   
   .dropdown {
     position: relative;
@@ -87,7 +86,7 @@
 
 
 
-  #textbox{
+  #keyword-input{
     border-radius: 10vh;
     padding: 2vh;
     width:80%;
@@ -116,6 +115,8 @@
   .opportunity h5{
     margin-top: 1em;
   }
+
+
 
 
   //LIGHT MODE
