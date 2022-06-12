@@ -4,13 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/main.css" />
-    <link rel="icon" href="./img/icon.png" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link
+      id="favicon"
+      rel="icon"
+      href="https://cdn.glitch.global/215730d2-0d8e-493b-a099-61209ab6b1e7/favicon.ico?v=1655007968626"
+      type="image/x-icon"
+    />
     <title>Volunteer! | Coral</title>
   </head>
   <body class="dark">
     <header>
-      <h3>coral</h3>
+      <a href="/"><h3>coral</h3></a>
       <nav class="nav_links">
         <input id="nav-toggle" type="checkbox" />
         <ul class="links">
@@ -45,16 +50,21 @@
             type="text"
             placeholder="search for anything!"
           />
-          <input id="searchbtn" type="submit" value="search" />
           <div class="dropdown">
-            <input id="city-input" class="dropbtn" type="text" list="cities" placeholder="choose a location..."/>
-              <datalist id="cities" class="dropdown-content">
-              </datalist>
+            <input
+              id="city-input"
+              class="dropbtn"
+              type="text"
+              list="cities"
+              placeholder="choose a location..."
+            />
+            <datalist id="cities" class="dropdown-content"> </datalist>
           </div>
+          <input id="searchbtn" type="submit" value="search" />
         </div>
       </form>
 
-      <h4 id="output" />
+      <!-- <h4 id="output" /> -->
       <!-- entries -->
 
       <div id="opportunities"></div>
@@ -62,7 +72,9 @@
 
     <script src="./js/app.js"></script>
     <script src="./js/api.js"></script>
-    <script>populateCitiesDropdown();</script>
+    <script>
+      populateCitiesDropdown();
+    </script>
     <script
       src="https://kit.fontawesome.com/6f3876ad7f.js"
       crossorigin="anonymous"

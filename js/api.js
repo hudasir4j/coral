@@ -11,21 +11,24 @@ function populateCitiesDropdown() {
       let response = JSON.parse(request.responseText);
       let oppsArr = response.features;
       let cityArr = [];
-      
+
+      // Get array of unique cities
       for (let i in oppsArr) {
         let city = oppsArr[i].attributes.city.toLowerCase();
         if (!cityArr.includes(city) && city !== "los angelels") {
           cityArr.push(city);
         }
       }
-      
+    
+      // Sort array
       cityArr.sort();
-      
-      let innerHTML = "";
-      cityArr.forEach((city) => {
-        innerHTML += `<option>${city}</option>`;
+
+      // Set up HTML
+      let innerHTML = ``;
+      cityArr.forEach((c) => {
+        innerHTML += `<option>${c}</option>`;
       });
-      
+
       document.getElementById("cities").innerHTML = innerHTML;
     }
   };
@@ -63,6 +66,7 @@ function getSearchResults() {
       let oppsArr = response.features;
       let resArr = [];
 
+      // Search for keywords in name and description for each opp
       for (let i in oppsArr) {
         let desc = oppsArr[i].attributes.description.toLowerCase();
         let name = oppsArr[i].attributes.Name.toLowerCase();
@@ -72,11 +76,13 @@ function getSearchResults() {
           }
         });
       }
-      console.log(resArr);
 
-      let innerHTML = document.getElementById("output").innerHTML;
+      // Set up HTML
+      let innerHTML = ``;
       if (resArr.length <= 0) {
-        innerHTML.innerHTML = "no results found!"; // TODO: make pretty
+        innerHTML = `<div class="opportunity center-horiz">
+               <h2>no results found!</h2>
+             </div>`;
       } else {
         let name,
           description,
@@ -88,18 +94,18 @@ function getSearchResults() {
           phones,
           url,
           link;
-        innerHTML = ``;
         for (let i = 0; i < resArr.length; i++) {
-          name = resArr[i].attributes.Name;
-          description = resArr[i].attributes.description;
-          address1 = resArr[i].attributes.addrln1;
-          address2 = resArr[i].attributes.addrln2;
-          city = resArr[i].attributes.city;
-          zip = resArr[i].attributes.zip;
-          hours = resArr[i].attributes.hours;
-          phones = resArr[i].attributes.phones;
-          url = resArr[i].attributes.url;
-          link = resArr[i].attributes.link;
+          let currResAttrs = resArr[i].attributes;
+          name = currResAttrs.Name;
+          description = currResAttrs.description;
+          address1 = currResAttrs.addrln1;
+          address2 = currResAttrs.addrln2;
+          city = currResAttrs.city;
+          zip = currResAttrs.zip;
+          hours = currResAttrs.hours;
+          phones = currResAttrs.phones;
+          url = currResAttrs.url;
+          link = currResAttrs.link;
 
           innerHTML += `<div class="opportunity">
                <h2>${name}</h2>
